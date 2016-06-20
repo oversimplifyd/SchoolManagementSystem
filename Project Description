@@ -1,0 +1,91 @@
+Quick Project Description
+This is a platform that provides goods interchange among people.
+        I have a good I would like to exchange for another good.
+            If (there is an interest matching my need then call me up and let's meet up.
+
+        Entities...
+        Users
+        Profile
+        Trades
+        Cool Home Page
+
+        Admin for trades approval and may be clean-up..
+
+        Akk User
+            Can Sign-up.. (Facebook/twitter/instagram)
+            Will have a profile..
+            Can upload goods he or she wants to exchange and select goods he or she want to exchange it for
+            ALl upload-able goods must be categorized.. That is all goods must fall into a category to enable search and upload queires.
+            Can publish/fire these requests. Not until you fire a trade request it remains in your profile or wishList.
+            Note: All fired request must be approved in order to be displayed on major pages other than the user's profile page.
+            Yet to be approved goods take residence ONLY in the user's arena.
+
+            A user may have more than one personal pages based on request_type..
+            if(request_type is from $this user)
+                Show all goods including those that have been approved and are yet to be approved.
+                Completed Transactions.. Pending Transactions.. Failed Transactions
+
+            if (request_type is from an interested trader)
+                Show pages containing completed transactions, pending transactions and interested goods..
+
+         Goods
+         ALl goods on the home page must be approved before publishing..
+         When an interest is shown for a good with the necessary match. This should take this person to the goods author's page for contact details and to see other important details of this autor such as
+         - Last Seen, Chat the author up, Contact Number, transaction records, successful transactions e.t.c.
+         Newly approved trades are given precedence over old goods...
+         All trades have an expiration period to keep the system clean.. If a trade is not completed and it has expried it could be re-activated by the author for re-publishing ..
+
+         Problems?
+         How to track completed trades.. for system clean up and right feedback.. Without making it subjective or user influenced..
+
+         TO GET THE SYSTEM STARTED
+                - A working back-end
+                - A good UI
+
+         TABLES
+         User_login     email, password
+         User           name,   contact, address, picture
+         trades_status  tradesId, tradeStatus(Complete, Failed, Peending), tradeApproval(Yes / No), tradepublished(Yes / No)
+         Trades         user_id cat_entry goodBDetail     goodTDetail    created_at  updated_at
+         Categories     Names
+
+         User - hasMany('trades') First Rel.
+         Trade - belongsTo('user') First Rel (Inverse of User)
+         Trade - hasOne('tradeStatus') Second Rel associating with status, belongsTo() a category
+
+        User hasMany() Trades
+        Trade belongsTo Category, belongsTo A User,
+        Trade hasMany trade_status
+
+
+        Registering...
+        1.  Contact
+        2.  Email
+        3.  Password
+        4.  Confirm Password
+        *   Social Registration
+
+        Logging In...
+        1.  Email
+        2.  Password
+        *   Social Logging In...
+
+        Profile...
+        Complete your Profile
+            * Contact Address
+            * Contact Number
+            * Profile Picture
+
+         Trades
+            * Upload
+                -   Form with categories containing want and need with relevant pictures...
+                Default     0
+            * Completed     1
+            * Approved      2
+            * Published     3
+
+        A user can save a trade
+        A user can decide to publish a trade after saving the trade
+        An admin will approve a trade for final publishing
+
+        A trade is completed when deal is completed. THis needs a feedback system to feed the system back..

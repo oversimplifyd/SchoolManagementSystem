@@ -1,0 +1,52 @@
+.items{
+
+  .item {
+
+    display: flex;
+    margin-bottom: 20px;
+
+    @import "bubbles";
+
+    @import "bubbles/form";
+
+  }
+
+  .divsor{
+
+    float: left;
+    width: 100%;
+    color: rgba(0, 0, 0, .5);
+    font-size: 1.2em;
+    margin: 10px 10px 20px 20px;
+
+  }
+
+    .pagination{
+
+      border-radius: 4px;
+      margin-top: 0px;
+
+      li:first-child>span {
+        margin-left: 0;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+
+      li:last-child>span {
+        margin-left: 0;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+
+      li.active span{
+        background: @theme-color;
+        border-color: lighten(@theme-color, 20);
+      }
+
+    }
+
+}
+
+
+
+

@@ -1,0 +1,36 @@
+@import "variables";
+
+@theme-color: rgba(55, 84,181, 0.8);
+@text-color: rgba(0, 0, 0, .6);
+@list-background: rgb(255, 254,255);
+
+.forum {
+
+  color: @text-color;
+
+  .header{
+    @import "header";
+  }
+
+  .body{
+
+    @import "conversation";
+
+    @import "open-conversation";
+
+    @import "topics";
+
+  }
+
+  @import "paginator";
+
+
+  a .avatar{
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+  }
+
+}
+
+@import "notifications";
